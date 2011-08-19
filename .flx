@@ -1,0 +1,13 @@
+[permission]
+public_html/dispatch.fcgi      775
+
+# Replace admin password with Database password.
+# tmp_db_pw will be removed when deploy.
+[replace]
+tmp_db_pw   DUMMY_DB_PASSWORD DB_PASSWORD
+
+[deploy]
+python -c "import os; os.chdir('./public_html'); from gluon.widget import console;console();"
+python -c "p=open('tmp_db_pw', 'r').readline()[:-1]; import os; os.chdir('./public_html'); from gluon.main import save_password; save_password(p, 443)"
+
+rm tmp_db_pw

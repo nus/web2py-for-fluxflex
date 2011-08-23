@@ -6,6 +6,18 @@ public_html/dispatch.fcgi      775
 [replace]
 tmp_db_pw   DUMMY_DB_PASSWORD DB_PASSWORD
 
+[setup]
+# These commands will be executed when setup.
+wget -q http://www.web2py.com/examples/static/web2py_src.zip
+# unzip command is not installed in fluxflex.
+# I tried "python -m zipfile -e web2py_src.zip", but the commmand
+# did't work well. So, I use perl module.
+perl -e 'use Archive::Extract; Archive::Extract->new(archive => "web2py_src.zip")->extract(to => "./");'
+
+mv web2py/* public_html
+rm web2py_src.zip
+rm -r web2py
+
 [deploy]
 python -c "import os; os.chdir('./public_html'); from gluon.widget import console;console();"
 python -c "p=open('tmp_db_pw', 'r').readline()[:-1]; import os; os.chdir('./public_html'); from gluon.main import save_password; save_password(p, 443)"

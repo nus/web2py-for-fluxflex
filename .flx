@@ -14,7 +14,7 @@ wget -q http://www.web2py.com/examples/static/web2py_src.zip
 # did't work well. So, I use perl module.
 perl -e 'use Archive::Extract; Archive::Extract->new(archive => "web2py_src.zip")->extract(to => "./");'
 
-mv web2py/* public_html
+cp -r web2py/* public_html
 rm web2py_src.zip
 rm -r web2py
 

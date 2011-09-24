@@ -24,3 +24,10 @@ Admin password
 Admin password in web2py is the same as fluxflex Database password.
 Fluxflex Database password is written in this URL.
 https://www.fluxflex.com/projects/YOURPROJECT/instruction/database
+
+How to add your applications
+============================
+1. clone from fluxflex repository.
+2. copy your application(in web2py/applications/YOUR_APP) to public_html/applications folder in the repository.
+3. add new files to the repository.
+4. commit and push

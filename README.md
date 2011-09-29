@@ -5,10 +5,13 @@ This package is a web2py for fluxflex.
 
 Installing
 ==========
-Go http://www.fluxflex.com/library/47
-And Click [Install]
+1. Go http://www.fluxflex.com/library/47
+2. And Click [Install]
+
 That's all.
 
+See also "How to deploy/use web2py on free fluxflex hosting", http://vimeo.com/28112026.
+Thank you mdipierro.
 
 Admin
 =====
